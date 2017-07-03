@@ -3,9 +3,9 @@
 from sklearn.metrics import mean_squared_error
 from math import sqrt
 import pandas as pd
-import numpy as np 
+import numpy as np
 
-test = pd.read_csv("data/model_4_mv27.csv")
+test = pd.read_csv("data/model_4_valid.csv")
 print(test.shape)
 print(test.head())
 
