@@ -41,7 +41,7 @@ Overall Error = Lambda1 x RMSE error of volumes + Lambda2 x RMSE error of prices
 
 ## My Final Approach:
 ---------------------
-- Used weighted moving average on daily data using the formula
+- Used exponential moving average on daily data using the formula
 ```
 F(t+1) = alpha * F(t)  + alpha * (1 - aplha) * F(t-1) + alpha * (1 - alpha)^2 * F(t-2) + .....N
 ```
@@ -68,7 +68,7 @@ F(t+1) = alpha * F(t)  + alpha * (1 - aplha) * F(t-1) + alpha * (1 - alpha)^2 * 
 - I tried LSTMs and RNNs, Neural Networks, there are two aspects here, modelling individual stocks and all the stocks at a time, I faced memory issues and simple models led to underfitting.
 
 ### Things I should have tried:
-- Using **weighted moving averages**, Trend and other variables as features and training linear models on each stocks individually. (I have seen trend in few stocks while plotting)
+- Using **exponential moving averages**, Trend and other variables as features and training linear models on each stocks individually. (I have seen trend in few stocks while plotting)
 - **Pair Trading** I have this concept in my mind during the entire competition but didn't give it a try as I was busy with usually work mentioned above. If we can check if there is any correlation between two stocks, this would be a great boost.
 - **Auto-Correlations (ACF) and using AR(N)** as features in linear models. I have previously not worked on daily data and making R-forecast package work on this has created some problems to me. Will check this in my free time. But building models on this will actually help.
 - The overall negitive correlation between price and Number of Sales is -0.43 using Spearman. It might be much more if i look at each stock individually. I could have used these while modelling using mv.
